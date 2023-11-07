@@ -1,0 +1,16 @@
+{
+  "name": "temporal-lambda-start-workflow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.mjs",
+  "scripts": {
+    "test": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@temporalio/client": "^1.8.6",
+    "https": "^1.0.0",
+    "uuid": "^9.0.1"
+  }
+}
