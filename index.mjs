@@ -14,16 +14,19 @@ async function run(jsonData) {
     });
 
     const workflowName = jsonData.workflow.name
+    var workflowQueueName = jsonData.workflow.queue
     const workflowInput = jsonData.workflow.input
 
     const id = uuidv4()
     const workflowID = `${workflowName}-${id}`
-    const queueName = `${workflowName}-Queue`
+    if (!workflowQueueName) {
+      workflowQueueName = `${workflowName}-Queue`
+    }
 
     const wfClient = client.workflow
     const handle = await wfClient.start(workflowName, {
       workflowId: workflowID,
-      taskQueue: queueName,
+      taskQueue: workflowQueueName,
       args: [workflowInput],
     });
     console.log(`Started workflow ${handle.workflowId}`);

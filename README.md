@@ -19,6 +19,7 @@ use a lambda event with the following schema
 {
     "workflow" :{
         "name": "MyWorkflowDefinition",
+        "queue": "MyTaskQueueName",
         "input": {
             "field1": "value1"
         }
